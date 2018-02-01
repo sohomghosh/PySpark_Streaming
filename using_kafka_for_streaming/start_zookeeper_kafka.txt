@@ -1,0 +1,13 @@
+####Start Zookeeper####
+sudo ./zkServer.sh start ../conf/zookeeper.properties
+
+
+####Start Kafka####
+sudo ./kafka-server-start.sh ../config/server.properties
+#keep running this : Don't close
+
+sudo ./kafka-console-consumer.sh --zookeeper localhost:2181 --topic new_topic --from-beginning
+#Keep writing texts here
+
+
+### NEED TO DEBUG : Spark streaming using kafka did not work well
