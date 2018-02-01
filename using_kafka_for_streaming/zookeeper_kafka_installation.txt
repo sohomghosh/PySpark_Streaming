@@ -1,0 +1,80 @@
+##################Zookeeper Installation##################################
+sudo mv /home/sohom/Downloads/zookeeper-3.4.10.tar.gz /opt/
+ 2001  cd /opt/
+ 2002  ls -ltrh
+ 2003  sudo tar xfz zookeeper-3.4.10.tar.gz 
+ 2004  cd zookeeper-3.4.10/
+ 2005  ls
+ 2006  cd bin/
+ 2007  ls
+ 2008  cd ..
+ 2009  ls
+ 2010  cd conf/
+ 2011  ls
+ 2012  cat zoo_sample.cfg
+ 2013  vi zoo.cfg
+ 2014  sudo vi zoo.cfg
+ 2015  ../bin/zkServer.sh start
+ 2016  cd ..
+ 2017  ls
+ 2018  cd bin/
+ 2019  ls
+ 2020  zkServer.sh start
+ 2021  ./zkServer.sh
+ 2022  sudo zkServer.sh start
+ 2023  sudo ./zkServer.sh start
+ 2024  sudo ./zkServer.sh stop
+ 2025  #./zookeeper-server-start.sh config/zookeeper.properties
+ 2026  ls
+ 2027  cd ..
+ 2028  ls
+ 2029  cd conf
+ 2030  ls
+ 2031  sudo vi zookeeper.properties
+
+'''
+#PASTE THE FOLLOWING LINES
+# the directory where the snapshot is stored.
+dataDir=/tmp/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+# disable the per-ip limit on the number of connections since this is a non-production config
+maxClientCnxns=0
+'''
+
+ 2038  cd zookeeper-3.4.10/
+ 2039  ls
+ 2040  cd bin/
+ 2041  ls
+ 2042  ls ../conf/
+ 2043  ./zkServer.sh start config/zookeeper.properties
+ 2044  sudo ./zkServer.sh start config/zookeeper.properties
+ 2045  sudo ./zkServer.sh stop
+ 2046  sudo ./zkServer.sh stop config/zookeeper.properties
+ 2047  sudo ./zkServer.sh start ../conf/zookeeper.properties
+
+
+###############################Kafka Installation####################################
+#Reference
+https://kafka.apache.org/quickstart
+
+sudo wget http://www-eu.apache.org/dist/kafka/1.0.0/kafka_2.11-1.0.0.tgz
+tar -xzf kafka_2.11-1.0.0.tgz 
+sudo tar -xzf kafka_2.11-1.0.0.tgz 
+cd kafka_2.11-1.0.0/
+ls
+
+sudo vi config/server.properties
+
+'''
+######PASTE THE FOLLOWING LINES##############
+# The id of the broker. This must be set to a unique integer for each broker.
+broker.id=0
+# Port that the socket server listens to
+port=9092
+# Zookeeper connection string (see zookeeper docs for details).
+zookeeper.connect=localhost:2181
+'''
+
+
+
